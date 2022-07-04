@@ -1,0 +1,33 @@
+@import "../header/variables.scss";
+
+.section-title {
+  margin: 0px 10%;
+  padding: 0px 30px;
+  color: $secondary-color;
+  font-size: $font-size-big;
+}
+
+.nav-container {
+  @include navFlex;
+  @include dropShadow;
+  @include navMargin;
+
+  .nav-button {
+    @include buttonDesign;
+    &:hover {
+      color: $secondary-color;
+      font-size: $weight-black;
+    }
+  }
+}
+
+.headline-list-container {
+  margin: 20px 10%;
+  padding: 15px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  //   background-color: rosybrown;
+}

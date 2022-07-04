@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap");
+.section-title {
+  margin: 0px 10%;
+  padding: 0px 30px;
+  color: #30a3f0;
+  font-size: 48px;
+}
+
+.nav-container {
+  display: flex;
+  gap: 3%;
+  margin: 0 auto;
+  max-width: 80%;
+  box-shadow: 6px 16px 27px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 6px 16px 27px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 6px 16px 27px 1px rgba(0, 0, 0, 0.05);
+  margin: 20px 10%;
+  padding: 15px 30px;
+}
+.nav-container .nav-button {
+  border: none;
+  text-align: center;
+  background-color: transparent;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.nav-container .nav-button:hover {
+  color: #30a3f0;
+  font-size: 900;
+}
+
+.headline-list-container {
+  margin: 20px 10%;
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}/*# sourceMappingURL=Headline.module.css.map */

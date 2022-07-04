@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap");
+
+$primary-color: #ffffff;
+$secondary-color: #30a3f0;
+$accent-color: #f2f2f2;
+$text-color: #0a0a0a;
+
+$header-text: "Playfair Display", serif;
+$paragraph-text: "Roboto", sans-serif;
+
+$font-size-small: 16px;
+$font-size-medium: 32px;
+$font-size-big: 48px;
+$font-size-huge: 64px;
+
+$weight-black: 900;
+$weight-bold: bold;
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin navFlex {
+  display: flex;
+  gap: 3%;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+@mixin defaultPadding {
+  padding: 10px 10%;
+}
+
+@mixin navMargin {
+  margin: 20px 10%;
+  padding: 15px 30px;
+}
+
+@mixin dropShadow {
+  box-shadow: 6px 16px 27px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 6px 16px 27px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 6px 16px 27px 1px rgba(0, 0, 0, 0.05);
+}
+
+@mixin buttonDesign {
+  border: none;
+  text-align: center;
+  background-color: transparent;
+  font-family: $paragraph-text;
+  font-size: $font-size-small;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+@mixin blueBtnDesign {
+  font-family: $header-text;
+  font-size: $font-size-small;
+  font-weight: $weight-bold;
+  color: $primary-color;
+  border-radius: 0;
+  border: 1px solid $secondary-color;
+  background-color: $secondary-color;
+  padding: 2% 10%;
+  width: 150px;
+  cursor: pointer;
+}
