@@ -26,8 +26,8 @@ const HeroSectionHeadline = (props) => {
   useEffect(() => {
     fetchNews().then((headlineData) => {
       const HEADLINE = {
-        title: headlineData.articles[4].title,
-        image: headlineData.articles[4].urlToImage,
+        title: headlineData.articles[0].title,
+        image: headlineData.articles[0].urlToImage,
       };
       setCurrentHeadlineTitle(HEADLINE.title);
       setCurrentHeadlineImage(HEADLINE.image);

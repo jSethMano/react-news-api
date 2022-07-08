@@ -17,8 +17,15 @@
     &:hover {
       color: $secondary-color;
       font-size: $weight-black;
+      // border-bottom: 2px solid $secondary-color;
     }
   }
+}
+
+.nav-button-active {
+  @include buttonDesign;
+  color: $secondary-color;
+  font-weight: $weight-bold;
 }
 
 .headline-list-container {

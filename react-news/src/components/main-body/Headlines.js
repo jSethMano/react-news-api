@@ -29,41 +29,51 @@ const HEADLINE_SOURCES = [
   },
 ];
 
-const initialState = HEADLINE_SOURCES[5].id;
+const initialState = HEADLINE_SOURCES[4].id;
 
-const changeSource = (state, action) => {
-  switch (action) {
-    case "Bloomberg":
-      return (state = HEADLINE_SOURCES[0].id);
-    case "BBC":
-      return (state = HEADLINE_SOURCES[1].id);
-    case "Business Insider":
-      return (state = HEADLINE_SOURCES[2].id);
-    case "ABC":
-      return (state = HEADLINE_SOURCES[3].id);
-    case "CNN":
-      return (state = HEADLINE_SOURCES[4].id);
-    case "ESPN":
-      return (state = HEADLINE_SOURCES[5].id);
-    default:
-      return state;
-  }
-};
-
-const Headlines = () => {
+const Headlines = (props) => {
   const [currentHeadlineList, setCurrentHeadlineList] = useState([]); //USE TO POPULATE THE HEADLINES FROM FETCHED OBJECT ARRAY
+  // const [isButtonActive, setIsButtonActive] = useState(false);
+
+  const changeSource = (state, action) => {
+    switch (action.type) {
+      case "Bloomberg":
+        return (state = HEADLINE_SOURCES[0].id);
+      case "BBC":
+        return (state = HEADLINE_SOURCES[1].id);
+      case "Business Insider":
+        return (state = HEADLINE_SOURCES[2].id);
+      case "ABC":
+        return (state = HEADLINE_SOURCES[3].id);
+      case "CNN":
+        return (state = HEADLINE_SOURCES[4].id);
+      case "ESPN":
+        return (state = HEADLINE_SOURCES[5].id);
+      default:
+        return state;
+    }
+  };
+
   const [state, dispatch] = useReducer(changeSource, initialState);
+
+  //PASS DATA TO HOME SECTION
+  const passArticleHandler = (articleData) => {
+    console.log(articleData);
+    props.articleDataToHomeSection(articleData);
+  };
 
   //FUNCTION FOR SOURCES NAVIGATION
   const sourcesNavHandler = (e) => {
-    console.log(e.target.textContent);
-    dispatch(e.target.textContent);
+    dispatch({
+      type: e.target.textContent,
+      current: e.currentTarget.textContent,
+    });
   };
 
   //POPULATE SOURCES NAVIGATION LINKS
   const headlineSources = HEADLINE_SOURCES.map((sourceTitle) => (
     <button
-      className={`${style["nav-button"]}`}
+      className={style["nav-button"]}
       key={sourceTitle.id}
       onClick={sourcesNavHandler}
     >
@@ -86,6 +96,9 @@ const Headlines = () => {
       } catch (e) {
         return e;
       }
+      return () => {
+        console.log("Unmounted");
+      };
     };
 
     fetchHeadlineFromSources().then((sourcesTitleData) => {
@@ -98,6 +111,9 @@ const Headlines = () => {
             key={headline.url}
             headlineImage={headline.urlToImage}
             headlineTitle={headline.title}
+            headlineContent={headline.content}
+            headlineAuthor={headline.author}
+            articleHandler={passArticleHandler} //PASS DATA TO HOME SECTION
           />
         ))
       );

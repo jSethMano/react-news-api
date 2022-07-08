@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/header/Header.js";
 import CategoriesNavigation from "./components/hero-section/CategoriesNavigation.js";
-import HeroSection from "./components/hero-section/HeroSection.js";
-import Headlines from "./components/main-body/Headlines.js";
-
-import style from "./App.module.scss";
+import HomeSection from "./components/main-body/HomeSection.js";
+import MainArticle from "./components/main-body/MainArticle.js";
+import Footer from "./components/footer/Footer.js";
 
 const App = () => {
+  const [showMainArticle, setShowMainArticle] = useState(false);
+  const [articleData, setArticleData] = useState("");
+
+  const showArticleHandler = (data) => {
+    setShowMainArticle(data[0]);
+    setArticleData(data);
+  };
+
+  const backStateHandler = (data) => {
+    setShowMainArticle(data);
+  };
+
   return (
     <React.Fragment>
       <header>
@@ -15,9 +26,20 @@ const App = () => {
       </header>
 
       <main>
-        <HeroSection />
-        <Headlines />
+        {!showMainArticle && (
+          <HomeSection articleDataToApp={showArticleHandler} />
+        )}
+        {showMainArticle && (
+          <MainArticle
+            articleDetails={articleData}
+            backState={backStateHandler}
+          />
+        )}
       </main>
+
+      <footer>
+        <Footer />
+      </footer>
     </React.Fragment>
   );
 };

@@ -1,15 +1,18 @@
 @import "../components/header/variables.scss";
 
 @mixin cardDescSection {
-  height: 280px;
+  height: 300px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px 20px 20px 20px;
+  padding: 5px 20px 20px 20px;
   font-family: $header-text;
-  font-size: $font-size-small;
+  font-size: 11px;
+  p {
+    font-family: $paragraph-text;
+    font-size: 14px;
+  }
 }
 
 @mixin cardBtnDesign {
@@ -28,14 +31,14 @@
   @include dropShadow;
   background-color: $primary-color;
   max-width: 30%;
-  height: 500px;
+  height: 100%;
   padding-bottom: 20px;
 
   .img-section {
     width: 100%;
     height: 210px;
     img {
-      object-fit: fill;
+      object-fit: cover;
       height: 100%;
       width: 100%;
     }
