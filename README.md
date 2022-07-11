@@ -5,3 +5,5 @@ Simple project using https://newsapi.org/ API
 #Cloned from Remote Repo
 
 #Added react-master branch
+
+#Added use-context branch
