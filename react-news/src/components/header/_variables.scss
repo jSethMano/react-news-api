@@ -67,3 +67,8 @@ $weight-bold: bold;
   width: 150px;
   cursor: pointer;
 }
+
+@mixin mainArticleMargin($topBottomMargin, $leftRightMargin) {
+  //   margin: 20px 10%;
+  margin: $topBottomMargin $leftRightMargin;
+}
