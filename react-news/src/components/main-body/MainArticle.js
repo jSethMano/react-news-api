@@ -5,27 +5,41 @@ import style from "./MainArticle.module.scss";
 
 const MainArticle = (props) => {
   const [currentHeadlines, setCurrentHeadlines] = useState([]);
+
   const data = props.articleDetails;
 
   const firstString = data[1].split(" ").shift();
 
-  const fetchHeadlines = async () => {
-    const headlinesUrl = `https://newsapi.org/v2/everything?q=${firstString}&apiKey=c013cc0c9e0c4ac28de93e9591e49f4d`;
-
-    try {
-      const res = await fetch(headlinesUrl);
-      if (res.ok) {
-        const data = await res.json();
-        return data;
-      } else if (!res.ok) {
-        console.log(res.status);
-      }
-    } catch (e) {
-      console.log(e);
-    }
+  const articleDataHandler = (selectedArticleData) => {
+    console.log(selectedArticleData);
+    const articleArray = [
+      true,
+      selectedArticleData.title,
+      selectedArticleData.urlToImage,
+      selectedArticleData.content,
+      selectedArticleData.author,
+    ];
+    console.log(articleArray);
+    props.fromMainArticleHeadlines(articleArray);
   };
 
   useEffect(() => {
+    const fetchHeadlines = async () => {
+      const headlinesUrl = `https://newsapi.org/v2/everything?q=${firstString}&apiKey=c013cc0c9e0c4ac28de93e9591e49f4d`;
+
+      try {
+        const res = await fetch(headlinesUrl);
+        if (res.ok) {
+          const data = await res.json();
+          return data;
+        } else if (!res.ok) {
+          console.log(res.status);
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
     fetchHeadlines().then((newsData) => {
       const firstThreeData = newsData.articles.slice(0, 3);
       console.log(firstThreeData);
@@ -36,11 +50,16 @@ const MainArticle = (props) => {
             key={data.url}
             headlineTitle={data.title}
             headlineImage={data.urlToImage}
+            selectedArticle={data} //PASS DATA TO MainArticleHeadline.js
+            article={articleDataHandler}
           />
         ))
       );
     });
-  }, []);
+    return () => {
+      //CLEANUP FUNCTION
+    };
+  }, [firstString]);
 
   const backHandler = () => {
     props.backState(false);
@@ -49,7 +68,7 @@ const MainArticle = (props) => {
   return (
     <React.Fragment>
       <button className={`${style["back-button"]}`} onClick={backHandler}>
-        Back
+        Return to home
       </button>
       <div className={`${style["main-article-container"]}`}>
         <div className={`${style["image-container"]}`}>

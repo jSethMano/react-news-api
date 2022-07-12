@@ -4,7 +4,18 @@ import style from "./MainArticleHeadline.module.scss";
 
 const MainArticleHeadline = (props) => {
   const openMainArticleHandler = (e) => {
-    console.log(e);
+    const articleData = props.selectedArticle;
+    console.log(articleData);
+
+    props.article(articleData);
+    window.scrollTo(0, 0);
+
+    // const selectedArticle = {
+    //   mainArticleTitle: articleData.title,
+    //   mainArticleImage: articleData.urlToImage,
+    //   mainArticleContent: articleData.content,
+    //   mainArticleAuthor: articleData.author,
+    // };
   };
 
   return (

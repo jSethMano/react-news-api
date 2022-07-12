@@ -33,6 +33,9 @@ const App = () => {
           <MainArticle
             articleDetails={articleData}
             backState={backStateHandler}
+            fromMainArticleHeadlines={(data) => {
+              setArticleData(data);
+            }}
           />
         )}
       </main>

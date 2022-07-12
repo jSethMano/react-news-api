@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import style from "./HeroHeadlineWrapper.module.scss";
 
 const HeroHeadlineWrapper = (props) => {
@@ -9,7 +9,6 @@ const HeroHeadlineWrapper = (props) => {
         <div className={`${style["image-container"]}`}>
           <img src={props.headlineImage} alt="Headline "></img>
         </div>
-        <figcaption></figcaption>
       </figure>
     </React.Fragment>
   );
