@@ -1,5 +1,5 @@
-# react-news-api
+# React-News-API
 
-Simple project using https://newsapi.org/ API
+## Simple React JS project using https://newsapi.org/ API
 
-#Cloned from Remote Repo
+### Please note that I only used a developer subscription of the API
