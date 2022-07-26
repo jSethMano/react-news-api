@@ -1,0 +1,57 @@
+@import "../header/variables.scss";
+
+.back-button {
+  @include mainArticleMargin(5px, 10%);
+  @include blueBtnDesign();
+  background-color: $primary-color;
+  font-family: $paragraph-text;
+  font-weight: 100;
+  color: $secondary-color;
+  text-align: center;
+  padding: 5px 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.main-article-container {
+  @include mainArticleMargin(20px, 10%);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+
+  .image-container {
+    width: 100%;
+    height: 60vh;
+    img {
+      object-fit: cover;
+      object-position: 20% 4%;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  article {
+    h1 {
+      @include mainArticleMargin(20px, 0);
+      font-family: $header-text;
+      font-weight: $weight-black;
+      font-size: $font-size-big;
+    }
+    h3 {
+      @include mainArticleMargin(5px, 0);
+    }
+    small {
+      font-weight: $weight-bold;
+      float: right;
+    }
+  }
+}
+
+.headline-title {
+  margin: 60px 10% 25px 10%;
+  color: $secondary-color;
+  border-bottom: 3px solid $accent-color;
+}

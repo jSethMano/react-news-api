@@ -1,0 +1,39 @@
+@import "../header/variables.scss";
+
+@mixin footerFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  background-color: $accent-color;
+  .footer-contents {
+    @include navMargin();
+    @include footerFlex();
+    margin-top: 0;
+    margin-bottom: 0;
+
+    p {
+      font-size: 12px;
+      font-weight: $weight-bold;
+    }
+
+    img {
+      width: 140px;
+    }
+
+    .nav {
+      @include defaultPadding();
+      @include navFlex();
+      margin-top: 10px;
+      gap: 50px;
+      justify-content: space-evenly;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

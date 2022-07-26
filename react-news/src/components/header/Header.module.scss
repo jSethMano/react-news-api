@@ -1,0 +1,38 @@
+@import "variables.scss";
+
+.header {
+  @include flexCenter();
+  @include defaultPadding();
+  background-color: $primary-color;
+  max-width: 100%;
+  margin: 0 auto;
+
+  &-logo {
+    width: 42px;
+  }
+
+  .search-bar {
+    @include flexCenter();
+    .header-textbox {
+      font-family: $header-text;
+      font-size: $font-size-small;
+      font-style: italic;
+      border-width: 0px;
+      border-radius: 0;
+      border: 1px solid $secondary-color;
+      padding: 2% 5%;
+      width: 300px;
+
+      &:focus {
+        outline: none;
+        border-radius: 0;
+        border: 1px solid $secondary-color;
+        background-color: bisque;
+      }
+    }
+
+    .header-search {
+      @include blueBtnDesign();
+    }
+  }
+}

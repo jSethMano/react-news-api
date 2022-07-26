@@ -1,0 +1,15 @@
+@import "../header/variables.scss";
+
+.nav {
+  @include navFlex;
+  @include dropShadow;
+  @include navMargin;
+
+  .nav-buttons {
+    @include buttonDesign;
+    &:hover {
+      color: $secondary-color;
+      font-size: $weight-black;
+    }
+  }
+}

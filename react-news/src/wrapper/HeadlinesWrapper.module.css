@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap");
+.card-container {
+  box-shadow: 6px 16px 27px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 6px 16px 27px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 6px 16px 27px 1px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  max-width: 30%;
+  height: 500px;
+  padding-bottom: 20px;
+}
+.card-container .img-section {
+  width: 100%;
+  height: 210px;
+}
+.card-container .img-section img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  height: 100%;
+  width: 100%;
+}
+.card-container .desc-section {
+  height: 280px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 20px 20px 20px;
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+}
+.card-container .desc-section button {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  border-radius: 0;
+  border: 1px solid #30a3f0;
+  background-color: #30a3f0;
+  padding: 2% 10%;
+  width: 100%;
+  cursor: pointer;
+}/*# sourceMappingURL=HeadlinesWrapper.module.css.map */
